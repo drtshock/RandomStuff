@@ -30,7 +30,7 @@ public class BowListener extends JavaPlugin implements Listener
 		ItemStack items = player.getInventory().getItem(262);
 		if((inBoat == true) && (action == Action.LEFT_CLICK_AIR) && (action == Action.LEFT_CLICK_BLOCK) && (mat == Material.BOW) && (items != null))
 		{
-			// Add shit here?
+			return;
 		}
 	}
 	

@@ -12,11 +12,11 @@ import org.bukkit.event.vehicle.VehicleDamageEvent;
 import org.bukkit.event.vehicle.VehicleEnterEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class BoatCarListener extends JavaPlugin implements Listener
+public class BoatDamageListener extends JavaPlugin implements Listener
 {
 
 	final Main plugin;
-	public BoatCarListener(Main instance)
+	public BoatDamageListener(Main instance)
 	{
 		plugin = instance;
 	}
@@ -51,9 +51,6 @@ public class BoatCarListener extends JavaPlugin implements Listener
 	@EventHandler
 	public void onDamage(VehicleDamageEvent event)
 	{
-		//if (getConfig().getBoolean("Disable Boat Damage on Land") == true)
-		//{
-			Bukkit.getServer().broadcastMessage(ChatColor.RED + "Config works damage event");
 		if(event.getVehicle() instanceof Boat && event.getVehicle().getPassenger() instanceof Player)
 		 {
 			Player player = (Player) event.getVehicle().getPassenger();
@@ -63,6 +60,5 @@ public class BoatCarListener extends JavaPlugin implements Listener
 				Bukkit.getServer().broadcastMessage(ChatColor.GREEN + "Boat damage canceled.");
 			}
 		 }
-		//}
 	}
 }
