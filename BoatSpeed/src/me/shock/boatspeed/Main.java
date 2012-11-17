@@ -1,5 +1,6 @@
 package me.shock.boatspeed;
 
+import org.bukkit.Material;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -28,5 +29,6 @@ public class Main extends JavaPlugin implements Listener
 		this.getConfig().set("Disable Boat Fall Damage", true);
 		this.getConfig().set("Flying Boat", true);
 		this.getConfig().set("Disable Boat Damage on Land", true);
+		this.getConfig().set("BowShoot", Material.ARROW);
 	}
 }
