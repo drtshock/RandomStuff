@@ -12,7 +12,7 @@ public class Main extends JavaPlugin implements Listener
 		PluginManager pm = getServer().getPluginManager();
 		pm.registerEvents(new SpeedListener(this), this);
 		pm.registerEvents(new FallDamageListener(this), this);
-		//pm.registerEvents(new BowListener(this), this);
+		pm.registerEvents(new BowListener(this), this);
 		pm.registerEvents(new BatWitchListener(this), this);
 		pm.registerEvents(new BoatDamageListener(this), this);
 		setupConfig();

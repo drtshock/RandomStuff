@@ -45,7 +45,7 @@ public class SpeedListener extends JavaPlugin implements Listener
 		 {
 			Boat b = (Boat) player.getVehicle();
 			b.setVelocity(b.getVelocity().setY(0.8));
-			Bukkit.getServer().broadcastMessage(ChatColor.GREEN + "Increased speed " + event.getPlayer().getName() + " blaze click"); // Confirmed event fired for player.
+			//Bukkit.getServer().broadcastMessage(ChatColor.GREEN + "Increased speed " + event.getPlayer().getName() + " blaze click"); // Confirmed event fired for player.
 			//Bukkit.getServer().broadcastMessage(ChatColor.DARK_RED + "Error 1");
 		 }
 		}

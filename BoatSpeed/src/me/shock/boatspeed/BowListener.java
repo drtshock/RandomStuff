@@ -1,21 +1,20 @@
 package me.shock.boatspeed;
 
-/*import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
-import org.bukkit.Material;
+import org.bukkit.Location;
+import org.bukkit.entity.EntityType;
+import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
-import org.bukkit.event.entity.ProjectileLaunchEvent;
+import org.bukkit.event.entity.ProjectileHitEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
-import org.bukkit.inventory.ItemStack;*/
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.event.Listener;
 
 public class BowListener extends JavaPlugin implements Listener
 {
 
-	/*final Main plugin;
+	final Main plugin;
 	public BowListener(Main instance)
 	{
 		plugin = instance;
@@ -24,24 +23,23 @@ public class BowListener extends JavaPlugin implements Listener
 	@EventHandler (priority = EventPriority.LOWEST)
 	public void onShoot(PlayerInteractEvent event)
 	{
-		Player player = event.getPlayer();
-		//Action action = event.getAction();
-		Boolean inBoat = player.isInsideVehicle();
-		ItemStack item = player.getItemInHand();
-		Material mat = item.getType();
-		ItemStack items = player.getInventory().getItem(262);
-		if((inBoat == true) && (mat == Material.BOW) && (items != null))
-		{
-			Bukkit.getServer().broadcastMessage(ChatColor.DARK_RED + "Erorr in bow listener");
-			return;
-		}
+		return;
 	}
 	
 	@EventHandler
-	public void lock(ProjectileLaunchEvent event)
+	public void shoot(ProjectileHitEvent event)
 	{
-		// Lock on projectiles here somehow.
+		LivingEntity shooter = event.getEntity().getShooter();
+		Location loc = event.getEntity().getLocation();
+		EntityType entity = event.getEntityType();
+		if (shooter instanceof Player && entity.equals(EntityType.ARROW))
+		{
+			loc.getWorld().strikeLightningEffect(loc);
+		}
+		if (shooter instanceof Player && entity.equals(EntityType.SNOWBALL))
+		{
+			loc.getWorld().createExplosion(loc, (float) 0.1);
+		}
 	}
-*/	
 }
 
