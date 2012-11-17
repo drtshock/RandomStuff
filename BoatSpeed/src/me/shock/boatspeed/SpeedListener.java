@@ -37,11 +37,16 @@ public class SpeedListener extends JavaPlugin implements Listener
 		Material mat = item.getType();
 		Action action = event.getAction();
 		Boolean inBoat = player.isInsideVehicle();
-		if(action == Action.LEFT_CLICK_AIR && inBoat == true && player.getVehicle() instanceof Boat && mat == Material.BLAZE_ROD)
+		if((action == Action.LEFT_CLICK_AIR) && (inBoat == true) && (player.getVehicle() instanceof Boat && mat == Material.BLAZE_ROD))
 		 {
 			Boat b = (Boat) player.getVehicle();
 			b.setVelocity(b.getVelocity().setY(0.8));
 			Bukkit.getServer().broadcastMessage(ChatColor.GREEN + "Increased speed on blaze click");
 		 }
+		else
+		{
+			Bukkit.getServer().broadcastMessage(ChatColor.RED + "Error in speed listener");
+			return;
+		}
 	}
 }
