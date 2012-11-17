@@ -1,10 +1,12 @@
 package me.shock.boatspeed;
 
-import org.bukkit.entity.Entity;
+import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.entity.ProjectileLaunchEvent;
+import org.bukkit.event.block.Action;
+import org.bukkit.event.player.PlayerInteractEvent;
+import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class BowListener extends JavaPlugin implements Listener
@@ -17,12 +19,16 @@ public class BowListener extends JavaPlugin implements Listener
 	}
 	
 	@EventHandler
-	public void onShoot(ProjectileLaunchEvent event)
+	public void onShoot(PlayerInteractEvent event)
 	{
-		Entity entity = event.getEntity();
-		if(entity instanceof Player)
+		Player player = event.getPlayer();
+		Action action = event.getAction();
+		Boolean inBoat = player.isInsideVehicle();
+		ItemStack item = player.getItemInHand();
+		Material mat = item.getType();
+		if((inBoat == true) && (action == Action.LEFT_CLICK_AIR) && (action == Action.LEFT_CLICK_BLOCK) && (mat == Material.BOW))
 		{
-			
+			// Add shit here
 		}
 	}
 	
