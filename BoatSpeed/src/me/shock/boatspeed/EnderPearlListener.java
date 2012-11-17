@@ -1,5 +1,6 @@
 package me.shock.boatspeed;
 
+import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerTeleportEvent;
@@ -19,8 +20,12 @@ public class EnderPearlListener extends JavaPlugin implements Listener
 	@EventHandler
 	public void onTeleport(PlayerTeleportEvent event)
 	{
+		Player player = event.getPlayer();
 		TeleportCause cause = event.getCause();
 		if (cause.equals(TeleportCause.ENDER_PEARL));
-		event.setCancelled(true);
+		{
+			player.setFireTicks(20);
+			event.setCancelled(true);
+		}
 	}
 }
