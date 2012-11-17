@@ -13,6 +13,7 @@ public class Main extends JavaPlugin implements Listener
 		pm.registerEvents(new BoatCarListener(this), this);
 		pm.registerEvents(new SpeedListener(this), this);
 		pm.registerEvents(new FallDamageListener(this), this);
+		pm.registerEvents(new BowListener(this), this);
 		getLogger().info("BoatSpeed enabled");
 	}
 	
