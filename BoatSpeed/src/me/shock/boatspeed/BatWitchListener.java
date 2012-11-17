@@ -44,6 +44,7 @@ public class BatWitchListener extends JavaPlugin implements Listener
 		if (entity instanceof Witch)
 		{
 			List<ItemStack> item = event.getDrops();
+			item.clear();
 		}
 	}
 }
