@@ -51,14 +51,17 @@ public class BoatCarListener extends JavaPlugin implements Listener
 	@EventHandler
 	public void onDamage(VehicleDamageEvent event)
 	{
-		if(event.getVehicle() instanceof Boat && event.getVehicle().getPassenger() instanceof Player)
+		if (getConfig().getBoolean("Disable Boat Damage on Land") == true)
 		{
+		if(event.getVehicle() instanceof Boat && event.getVehicle().getPassenger() instanceof Player)
+		 {
 			Player player = (Player) event.getVehicle().getPassenger();
 			if (player.hasPermission("boatcar.use"))
 			{
 				event.setCancelled(true);
 				Bukkit.getServer().broadcastMessage(ChatColor.GREEN + "Boat damage canceled.");
 			}
+		 }
 		}
 	}
 }
