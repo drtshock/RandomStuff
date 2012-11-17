@@ -6,6 +6,7 @@ import org.bukkit.Material;
 import org.bukkit.entity.Boat;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
@@ -29,7 +30,7 @@ public class SpeedListener extends JavaPlugin implements Listener
 		player.sendMessage(ChatColor.GREEN + "BoatCarListener working");
 	}
 	
-	@EventHandler
+	@EventHandler (priority = EventPriority.LOW)
 	public void interact(PlayerInteractEvent event)
 	{
 		Player player = event.getPlayer();
