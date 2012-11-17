@@ -32,8 +32,8 @@ public class SpeedListener extends JavaPlugin implements Listener
 	@EventHandler
 	public void interact(PlayerInteractEvent event)
 	{
-		if (getConfig().getBoolean("Flying Boat", true))
-		{
+		//if (getConfig().getBoolean("Flying Boat", true))
+		//{
 			Bukkit.getServer().broadcastMessage(ChatColor.GOLD + "Config works in blaze click event");
 		Player player = event.getPlayer();
 		ItemStack item = player.getItemInHand();
@@ -46,8 +46,6 @@ public class SpeedListener extends JavaPlugin implements Listener
 			b.setVelocity(b.getVelocity().setY(0.8));
 			Bukkit.getServer().broadcastMessage(ChatColor.GREEN + "Increased speed on blaze click");
 		 }
-	    }
-		else
-			return;
+	   // }
 	}
 }
