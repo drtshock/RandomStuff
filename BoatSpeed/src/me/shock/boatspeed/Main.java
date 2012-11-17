@@ -1,6 +1,5 @@
 package me.shock.boatspeed;
 
-import org.bukkit.Material;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -16,6 +15,7 @@ public class Main extends JavaPlugin implements Listener
 		pm.registerEvents(new FallDamageListener(this), this);
 		pm.registerEvents(new BowListener(this), this);
 		setupConfig();
+		saveConfig();
 		getLogger().info("BoatSpeed enabled");
 	}
 	

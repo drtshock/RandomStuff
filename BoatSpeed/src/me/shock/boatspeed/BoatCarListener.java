@@ -53,6 +53,7 @@ public class BoatCarListener extends JavaPlugin implements Listener
 	{
 		if (getConfig().getBoolean("Disable Boat Damage on Land") == true)
 		{
+			Bukkit.getServer().broadcastMessage(ChatColor.RED + "Config works damage event");
 		if(event.getVehicle() instanceof Boat && event.getVehicle().getPassenger() instanceof Player)
 		 {
 			Player player = (Player) event.getVehicle().getPassenger();
