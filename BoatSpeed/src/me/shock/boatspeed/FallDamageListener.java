@@ -1,7 +1,5 @@
 package me.shock.boatspeed;
 
-import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.entity.Boat;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
@@ -29,7 +27,6 @@ public class FallDamageListener extends JavaPlugin implements Listener
 			if(veh instanceof Boat)
 			{
 				event.setCancelled(true);
-				Bukkit.getServer().broadcastMessage(ChatColor.GOLD + "Fall damage cancelled"); // Confirmed event fired.
 			}
 		}
 	}

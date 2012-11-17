@@ -42,7 +42,6 @@ public class BoatDamageListener extends JavaPlugin implements Listener
 						Boat b = (Boat) v;
 						b.setWorkOnLand(true);
 						b.setMaxSpeed(5);
-						//Bukkit.getServer().broadcastMessage(ChatColor.GREEN + "Increased speed on land."); // confirming event fired
 					}
 				}
 		}
@@ -57,7 +56,6 @@ public class BoatDamageListener extends JavaPlugin implements Listener
 			if (player.hasPermission("boatcar.use"))
 			{
 				event.setCancelled(true);
-				//Bukkit.getServer().broadcastMessage(ChatColor.GREEN + "Boat damage canceled.");
 			}
 		 }
 	}
