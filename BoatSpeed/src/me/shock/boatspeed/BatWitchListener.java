@@ -33,7 +33,9 @@ public class BatWitchListener extends JavaPlugin implements Listener
 		{
 			((Witch) entity).damage(100);
 			Location loc = entity.getLocation();
-			loc.getWorld().createExplosion(loc, 1);
+			loc.getWorld().playEffect(loc, Effect.SMOKE, 700);
+			loc.getWorld().playEffect(loc, Effect.MOBSPAWNER_FLAMES, 700);
+			loc.getWorld().playEffect(loc, Effect.ZOMBIE_DESTROY_DOOR, 100);
 			loc.getWorld().spawn(loc, Bat.class);
 			Bukkit.getServer().broadcastMessage(ChatColor.DARK_PURPLE + "Got witch damage event"); // confirming event fired.
 		}
@@ -41,6 +43,9 @@ public class BatWitchListener extends JavaPlugin implements Listener
 		{
 			((Bat) entity).damage(100);
 			Location loc = entity.getLocation();
+			loc.getWorld().playEffect(loc, Effect.SMOKE, 700);
+			loc.getWorld().playEffect(loc, Effect.MOBSPAWNER_FLAMES, 700);
+			loc.getWorld().playEffect(loc, Effect.ZOMBIE_CHEW_IRON_DOOR, 100);
 			loc.getWorld().spawn(loc, Witch.class);
 			Bukkit.getServer().broadcastMessage(ChatColor.DARK_PURPLE + "Got Bat damage event"); // confirming event fired.
 		}
@@ -54,8 +59,6 @@ public class BatWitchListener extends JavaPlugin implements Listener
 		{
 			List<ItemStack> item = event.getDrops();
 			item.clear();
-			entity.getWorld().playEffect(entity.getLocation(), Effect.SMOKE, 5);
-			
 		}
 	}
 }
