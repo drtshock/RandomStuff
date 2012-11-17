@@ -29,7 +29,7 @@ public class FallDamageListener extends JavaPlugin implements Listener
 			if(veh instanceof Boat)
 			{
 				event.setCancelled(true);
-				Bukkit.getServer().broadcastMessage(ChatColor.GOLD + "Fall damage cancelled");
+				Bukkit.getServer().broadcastMessage(ChatColor.GOLD + "Fall damage cancelled"); // Confirmed event fired.
 			}
 		}
 	}

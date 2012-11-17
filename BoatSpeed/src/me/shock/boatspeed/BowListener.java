@@ -37,7 +37,7 @@ public class BowListener extends JavaPlugin implements Listener
 	@EventHandler
 	public void lock(ProjectileLaunchEvent event)
 	{
-		// Lock on projectiles here somehow
+		// Lock on projectiles here somehow.
 	}
 	
 }

@@ -33,14 +33,14 @@ public class BatWitchListener extends JavaPlugin implements Listener
 			((Witch) entity).damage(100);
 			Location loc = entity.getLocation();
 			loc.getWorld().spawn(loc, Bat.class);
-			Bukkit.getServer().broadcastMessage(ChatColor.DARK_PURPLE + "Got witch damage event");
+			Bukkit.getServer().broadcastMessage(ChatColor.DARK_PURPLE + "Got witch damage event"); // confirming event fired.
 		}
 		if (entity instanceof Bat)
 		{
 			((Bat) entity).damage(100);
 			Location loc = entity.getLocation();
 			loc.getWorld().spawn(loc, Witch.class);
-			Bukkit.getServer().broadcastMessage(ChatColor.DARK_PURPLE + "Got Bat damage event");
+			Bukkit.getServer().broadcastMessage(ChatColor.DARK_PURPLE + "Got Bat damage event"); // confirming event fired.
 		}
 	}
 	
