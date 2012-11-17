@@ -41,7 +41,7 @@ public class BoatCarListener extends JavaPlugin implements Listener
 					{
 						Boat b = (Boat) v;
 						b.setWorkOnLand(true);
-						b.setMaxSpeed(100);
+						b.setMaxSpeed(5);
 						Bukkit.getServer().broadcastMessage(ChatColor.GREEN + "Increased speed on land.");
 					}
 				}
