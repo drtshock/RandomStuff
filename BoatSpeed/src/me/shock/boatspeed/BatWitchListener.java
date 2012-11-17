@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.Effect;
 import org.bukkit.Location;
 import org.bukkit.entity.Bat;
 import org.bukkit.entity.Entity;
@@ -32,6 +33,7 @@ public class BatWitchListener extends JavaPlugin implements Listener
 		{
 			((Witch) entity).damage(100);
 			Location loc = entity.getLocation();
+			loc.getWorld().createExplosion(loc, 1);
 			loc.getWorld().spawn(loc, Bat.class);
 			Bukkit.getServer().broadcastMessage(ChatColor.DARK_PURPLE + "Got witch damage event"); // confirming event fired.
 		}
@@ -52,6 +54,8 @@ public class BatWitchListener extends JavaPlugin implements Listener
 		{
 			List<ItemStack> item = event.getDrops();
 			item.clear();
+			entity.getWorld().playEffect(entity.getLocation(), Effect.SMOKE, 5);
+			
 		}
 	}
 }
