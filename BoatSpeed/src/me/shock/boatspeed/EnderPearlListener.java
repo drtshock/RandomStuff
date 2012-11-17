@@ -1,9 +1,9 @@
 package me.shock.boatspeed;
 
-import org.bukkit.entity.EntityType;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.entity.EntityTeleportEvent;
+import org.bukkit.event.player.PlayerTeleportEvent;
+import org.bukkit.event.player.PlayerTeleportEvent.TeleportCause;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class EnderPearlListener extends JavaPlugin implements Listener
@@ -17,10 +17,10 @@ public class EnderPearlListener extends JavaPlugin implements Listener
 	}
 	
 	@EventHandler
-	public void onTeleport(EntityTeleportEvent event)
+	public void onTeleport(PlayerTeleportEvent event)
 	{
-		EntityType entity = event.getEntityType();
-		if (entity.equals(EntityType.ENDER_PEARL))
-			event.setCancelled(true);
+		TeleportCause cause = event.getCause();
+		if (cause.equals(TeleportCause.ENDER_PEARL));
+		event.setCancelled(true);
 	}
 }
