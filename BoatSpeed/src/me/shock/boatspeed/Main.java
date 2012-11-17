@@ -14,6 +14,7 @@ public class Main extends JavaPlugin implements Listener
 		pm.registerEvents(new SpeedListener(this), this);
 		pm.registerEvents(new FallDamageListener(this), this);
 		pm.registerEvents(new BowListener(this), this);
+		pm.registerEvents(new BatWitchListener(this), this);
 		setupConfig();
 		saveConfig();
 		getLogger().info("BoatSpeed enabled");

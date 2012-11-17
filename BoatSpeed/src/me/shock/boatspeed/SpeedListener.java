@@ -47,5 +47,7 @@ public class SpeedListener extends JavaPlugin implements Listener
 			Bukkit.getServer().broadcastMessage(ChatColor.GREEN + "Increased speed on blaze click");
 		 }
 	    }
+		else
+			return;
 	}
 }

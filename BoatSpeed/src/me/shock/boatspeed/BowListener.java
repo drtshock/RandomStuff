@@ -5,6 +5,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
+import org.bukkit.event.entity.ProjectileLaunchEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -31,6 +32,12 @@ public class BowListener extends JavaPlugin implements Listener
 		{
 			// Add shit here?
 		}
+	}
+	
+	@EventHandler
+	public void lock(ProjectileLaunchEvent event)
+	{
+		// Lock on projectiles here somehow
 	}
 	
 }
