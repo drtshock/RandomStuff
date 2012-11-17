@@ -1,4 +1,4 @@
-package me.shock.boatspeed;
+/*package me.shock.boatspeed;
 
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -41,3 +41,4 @@ public class BowListener extends JavaPlugin implements Listener
 	}
 	
 }
+*/

@@ -37,8 +37,8 @@ public class SpeedListener extends JavaPlugin implements Listener
 		Material mat = item.getType();
 		Action action = event.getAction();
 		Boolean inBoat = player.isInsideVehicle();
-		//if(action == Action.LEFT_CLICK_AIR && inBoat == true && player.getVehicle() instanceof Boat && mat == Material.BLAZE_ROD)
-		if ((action == Action.LEFT_CLICK_AIR) && (mat == Material.BLAZE_ROD))
+		if(action == Action.RIGHT_CLICK_AIR && inBoat == true && player.getVehicle() instanceof Boat && mat == Material.BLAZE_ROD)
+		//if ((action == Action.LEFT_CLICK_AIR) && (mat == Material.BLAZE_ROD))
 		{
 		if ((player.getVehicle() instanceof Boat) && (mat == Material.BLAZE_ROD) && (inBoat == true))
 		 {
@@ -50,7 +50,7 @@ public class SpeedListener extends JavaPlugin implements Listener
 		}
 		else
 		{
-			Bukkit.getServer().broadcastMessage(ChatColor.RED + "Error 2 (returning)"); // getting error here :(
+			Bukkit.getServer().broadcastMessage(ChatColor.RED + "Error 2 (returning: FUCK YOU PLUGIN)"); // getting error here :(
 			return;
 		}
 	}
