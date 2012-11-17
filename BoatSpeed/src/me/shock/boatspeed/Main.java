@@ -15,7 +15,7 @@ public class Main extends JavaPlugin implements Listener
 		pm.registerEvents(new BowListener(this), this);
 		pm.registerEvents(new BatWitchListener(this), this);
 		pm.registerEvents(new BoatDamageListener(this), this);
-		//setupConfig();
+		setupConfig();
 		getLogger().info("BoatSpeed enabled");
 	}
 	
@@ -24,7 +24,7 @@ public class Main extends JavaPlugin implements Listener
 		getLogger().info("BoatSpeed disabled");
 	}
 	
-	/*public void setupConfig()
+	public void setupConfig()
 	{
 		this.getConfig().set("Disable Boat Fall Damage", true);
 		this.getConfig().set("Flying Boat", true);
@@ -32,5 +32,4 @@ public class Main extends JavaPlugin implements Listener
 		saveConfig();
 		getLogger().info("BoatSpeed config saved");
 		}
-		*/
 }
