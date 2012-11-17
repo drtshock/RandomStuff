@@ -29,6 +29,5 @@ public class Main extends JavaPlugin implements Listener
 		this.getConfig().set("Disable Boat Fall Damage", true);
 		this.getConfig().set("Flying Boat", true);
 		this.getConfig().set("Disable Boat Damage on Land", true);
-		this.getConfig().set("BowShoot", Material.ARROW);
 	}
 }

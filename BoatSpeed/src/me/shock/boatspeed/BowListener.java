@@ -21,16 +21,15 @@ public class BowListener extends JavaPlugin implements Listener
 	@EventHandler
 	public void onShoot(PlayerInteractEvent event)
 	{
-		ItemStack bows = getConfig().getInt(BowShoot);
 		Player player = event.getPlayer();
 		Action action = event.getAction();
 		Boolean inBoat = player.isInsideVehicle();
 		ItemStack item = player.getItemInHand();
 		Material mat = item.getType();
-		ItemStack items = player.getInventory().getItem(bowshooter);
-		if((inBoat == true) && (action == Action.LEFT_CLICK_AIR) && (action == Action.LEFT_CLICK_BLOCK) && (mat == Material.BOW))
+		ItemStack items = player.getInventory().getItem(262);
+		if((inBoat == true) && (action == Action.LEFT_CLICK_AIR) && (action == Action.LEFT_CLICK_BLOCK) && (mat == Material.BOW) && (items != null))
 		{
-			
+			// Add shit here?
 		}
 	}
 	
