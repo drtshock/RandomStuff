@@ -6,10 +6,12 @@ import org.bukkit.Effect;
 import org.bukkit.Location;
 import org.bukkit.entity.Bat;
 import org.bukkit.entity.Entity;
+import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Witch;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageEvent;
+import org.bukkit.event.entity.EntityDamageEvent.DamageCause;
 import org.bukkit.event.entity.EntityDeathEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -27,6 +29,9 @@ public class BatWitchListener extends JavaPlugin implements Listener
 	public void onDamage(EntityDamageEvent event)
 	{
 		Entity entity = event.getEntity();
+		DamageCause damager = event.getCause();
+		if (damager.equals(EntityType.PLAYER))
+	  {
 		if(entity instanceof Witch)
 		{
 			((Witch) entity).damage(100);
@@ -45,6 +50,7 @@ public class BatWitchListener extends JavaPlugin implements Listener
 			loc.getWorld().playEffect(loc, Effect.ZOMBIE_CHEW_IRON_DOOR, 100);
 			loc.getWorld().spawn(loc, Witch.class);
 		}
+	  }
 	}
 	
 	@EventHandler

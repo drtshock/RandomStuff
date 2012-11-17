@@ -40,6 +40,10 @@ public class BowListener extends JavaPlugin implements Listener
 		{
 			loc.getWorld().createExplosion(loc, (float) 0.1);
 		}
+		if (shooter instanceof Player && entity.equals(EntityType.ENDER_PEARL))
+		{
+			loc.getWorld().setStorm(true);
+		}
 	}
 }
 

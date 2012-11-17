@@ -43,6 +43,7 @@ public class SpeedListener extends JavaPlugin implements Listener
 		 {
 			Boat b = ((Boat) player.getVehicle());
 			b.setVelocity(b.getVelocity().setY(0.8));
+			//b.setVelocity(b.getLocation().getDirection().multiply(2));
 		 }
 		}
 		else
