@@ -4,6 +4,7 @@ import org.bukkit.Location;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
+import org.bukkit.entity.Skeleton;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.entity.ProjectileHitEvent;
@@ -38,11 +39,23 @@ public class BowListener extends JavaPlugin implements Listener
 		}
 		if (shooter instanceof Player && entity.equals(EntityType.SNOWBALL))
 		{
-			loc.getWorld().createExplosion(loc, (float) 1);
+			loc.getWorld().createExplosion(loc, (float) 7);
 		}
 		if (shooter instanceof Player && entity.equals(EntityType.ENDER_PEARL))
 		{
 			loc.getWorld().spawnEntity(loc.add(0, 20, 0), EntityType.SNOWMAN);
+		}
+		if (shooter instanceof Player && entity.equals(EntityType.EGG))
+		{
+			loc.getWorld().spawnEntity(loc.add(0, 50, 0), (EntityType.CHICKEN));
+			loc.getWorld().spawnEntity(loc.add(0, 50, 0), (EntityType.CHICKEN));
+			loc.getWorld().spawnEntity(loc.add(0, 50, 0), (EntityType.CHICKEN));
+			loc.getWorld().spawnEntity(loc.add(0, 50, 0), (EntityType.CHICKEN));
+			loc.getWorld().spawnEntity(loc.add(0, 50, 0), (EntityType.CHICKEN));
+		}
+		if (shooter instanceof Skeleton && entity.equals(EntityType.ARROW))
+		{
+			loc.getWorld().spawnEntity(loc.add(0, 10, 0), (EntityType.COW));
 		}
 	}
 }

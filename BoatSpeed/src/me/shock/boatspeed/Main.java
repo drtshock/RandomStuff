@@ -17,6 +17,7 @@ public class Main extends JavaPlugin implements Listener
 		pm.registerEvents(new BoatDamageListener(this), this);
 		pm.registerEvents(new SwordListener(this), this);
 		pm.registerEvents(new EnderPearlListener(this), this);
+		pm.registerEvents(new EatingListener(this), this);
 		setupConfig();
 		getLogger().info("BoatSpeed enabled");
 	}
