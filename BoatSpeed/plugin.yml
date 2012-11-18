@@ -1,3 +1,8 @@
 name: BoatSpeed
 main: me.shock.boatspeed.Main
 version: 0.1
+commands:
+  burn:
+  wipe:
+  boom:
+  effects:

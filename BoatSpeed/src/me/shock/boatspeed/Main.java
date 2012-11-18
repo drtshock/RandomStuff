@@ -18,6 +18,10 @@ public class Main extends JavaPlugin implements Listener
 		pm.registerEvents(new SwordListener(this), this);
 		pm.registerEvents(new EnderPearlListener(this), this);
 		pm.registerEvents(new EatingListener(this), this);
+		getCommand("burn").setExecutor(new CommandHandler(this));
+		getCommand("wipe").setExecutor(new CommandHandler(this));
+		getCommand("boom").setExecutor(new CommandHandler(this));
+		getCommand("effects").setExecutor(new CommandHandler(this));
 		setupConfig();
 		getLogger().info("BoatSpeed enabled");
 	}

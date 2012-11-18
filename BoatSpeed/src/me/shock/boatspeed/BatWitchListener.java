@@ -25,13 +25,15 @@ public class BatWitchListener extends JavaPlugin implements Listener
 		plugin = instance;
 	}
 	
+	// Player check isn't working :(
+	
 	@EventHandler
 	public void onDamage(EntityDamageEvent event)
 	{
 		Entity entity = event.getEntity();
-		DamageCause damager = event.getCause();
-		if (damager.equals(EntityType.PLAYER))
-	  {
+		//DamageCause damager = event.getCause();
+		//if (damager.equals(EntityType.PLAYER))
+	  //{
 		if(entity instanceof Witch)
 		{
 			((Witch) entity).damage(100);
@@ -50,7 +52,7 @@ public class BatWitchListener extends JavaPlugin implements Listener
 			loc.getWorld().playEffect(loc, Effect.ZOMBIE_CHEW_IRON_DOOR, 100);
 			loc.getWorld().spawn(loc, Witch.class);
 		}
-	  }
+	 // }
 	}
 	
 	@EventHandler
