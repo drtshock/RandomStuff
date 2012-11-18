@@ -8,6 +8,7 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Entity;
+import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -85,6 +86,20 @@ public class CommandHandler extends JavaPlugin implements CommandExecutor
 				 count++;
 			 }
 			 player.sendMessage(ChatColor.RED + "" + count + " players with effects");
+		 }
+		 
+		 if (((sender instanceof Player)) && (cmd.getName().equalsIgnoreCase("npc")))
+		 {
+			 Player player = (Player) sender;
+			 List<Entity> entities = player.getNearbyEntities(10, 10, 10);
+			 Iterator<?> iter = entities.iterator();
+			 while(iter.hasNext())
+			 {
+				 if(entities.equals(EntityType.VILLAGER))
+				 {
+					 entities.get(120);
+				 }
+			 }
 		 }
 		 
 		 
