@@ -17,15 +17,15 @@ public class EnderPearlListener extends JavaPlugin implements Listener
 		plugin = instance;
 	}
 	
-	@EventHandler
+	/*@EventHandler
 	public void onTeleport(PlayerTeleportEvent event)
 	{
 		Player player = event.getPlayer();
 		TeleportCause cause = event.getCause();
 		if (cause.equals(TeleportCause.ENDER_PEARL));
 		{
-			player.setFireTicks(20);
 			event.setCancelled(true);
 		}
 	}
+	*/
 }

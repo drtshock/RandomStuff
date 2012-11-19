@@ -45,12 +45,16 @@ public class BowListener extends JavaPlugin implements Listener
 
 			loc.getWorld().createExplosion(loc, (powerlevel));
 			
-			while(smitelevel > 0)
+			while(smitelevel > 0 && smitelevel < 5)
 			{
 			loc.getWorld().spawnEntity(loc, EntityType.ZOMBIE);
 			loc.getWorld().spawnEntity(loc, EntityType.SKELETON);
 			smitelevel--;
 			}
+			
+			// Attempt lock on arrows here
+			
+			
 			
 		}
 		if (shooter instanceof Player && entity.equals(EntityType.SNOWBALL))
