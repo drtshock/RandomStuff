@@ -1,6 +1,7 @@
 package me.shock.boatspeed;
 
 import org.bukkit.Location;
+import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.LivingEntity;
@@ -35,13 +36,14 @@ public class BowListener extends JavaPlugin implements Listener
 		LivingEntity shooter = event.getEntity().getShooter();
 		Location loc = event.getEntity().getLocation();
 		EntityType entity = event.getEntityType();
-		Player player = (Player) shooter;
-		ItemStack item = player.getItemInHand();
-		int powerlevel = item.getEnchantmentLevel(Enchantment.ARROW_DAMAGE);
-		int smitelevel = item.getEnchantmentLevel(Enchantment.DAMAGE_UNDEAD);
+		
 		
 		if (shooter instanceof Player && entity.equals(EntityType.ARROW))
 		{
+			Player player = (Player) shooter;
+			ItemStack item = player.getItemInHand();
+			int powerlevel = item.getEnchantmentLevel(Enchantment.ARROW_DAMAGE);
+			int smitelevel = item.getEnchantmentLevel(Enchantment.DAMAGE_UNDEAD);
 
 			loc.getWorld().createExplosion(loc, (powerlevel));
 			
@@ -56,6 +58,10 @@ public class BowListener extends JavaPlugin implements Listener
 			
 			
 			
+		}
+		if(shooter instanceof Skeleton && entity.equals(EntityType.ARROW))
+		{
+			loc.getWorld().spawnFallingBlock(loc, Material.DIAMOND_BLOCK, (byte) 0);
 		}
 		if (shooter instanceof Player && entity.equals(EntityType.SNOWBALL))
 		{
